@@ -1,3 +1,4 @@
+//sec 8, Lect 69: The complete React web app course
 var webpackConfig = require('./webpack.config.js');
 
 module.exports = function(config) {
