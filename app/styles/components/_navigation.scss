@@ -1,0 +1,25 @@
+/*
+  When you use a file only to be imported you start the file name with '_'
+  This tells scss that this file is partial and is usually used via other files
+*/
+
+.top-bar, .top-bar ul {
+  background-color: $nav-background;
+}
+
+/*
+  Same as
+  .top-bar .menu-text {
+
+  }
+*/
+.top-bar {
+  .menu-text {
+    color: $nav-text-color;
+  }
+
+  .menu > .menu-text > a {
+    display: inline;
+    padding: 0;
+  }
+}
