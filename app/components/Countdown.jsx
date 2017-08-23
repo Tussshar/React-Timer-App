@@ -34,6 +34,43 @@ var Countdown = React.createClass({
         }
       }
     },
+    /*componentWillUnmount: function () {
+      /*
+        This method automatically gets fired by react right before your component
+        gets removed from the DOM i.e. it gets visually removed from the browser
+      */
+/*
+      console.log('Component Did unmount');
+    },*/
+    /*componentWillUpdate: function (nextProps, nextState) {
+      /*
+        Gets triggered just before component getting update
+        gets new prop and new state as a parameter
+      */
+      /*
+    },*/
+    componentWillMount: function () {
+      /*
+        This method gets fired as your component first gets mounted
+        i.e. if component is rendered to the screen, then the componentWillMount
+        method gets called just before it is shown on the screen
+        This means you dont have value to the refs or DOM so if you have to make
+        any changes suppose to an input field you cannot do it in this method
+      */
+
+      console.log('Component Will mount');
+      clearInterval(this.timer);
+      this.timer = undefined;
+    },
+    /*componentDidMount: function () {
+      /*
+        This method gets fired when everything is rendered to the DOM
+        which means you are going to have access to any refs you want to do any
+        updating
+      */
+/*
+      console.log('COmponent Did mount');
+    },*/
     startTimer: function () {
       /*
         setInterval gets error function as the first argument which would
@@ -47,6 +84,8 @@ var Countdown = React.createClass({
         this.setState({
           count: newCount >= 0 ? newCount : 0
         });
+
+        
       }, 1000);
     },
     handleSetCountdown: function(seconds) {
