@@ -58,7 +58,6 @@ var Countdown = React.createClass({
         any changes suppose to an input field you cannot do it in this method
       */
 
-      console.log('Component Will mount');
       clearInterval(this.timer);
       this.timer = undefined;
     },
@@ -112,6 +111,7 @@ var Countdown = React.createClass({
 
       return (
           <div>
+            <h1 className="page-title">Countdown App</h1>
             <Clock totalSeconds={count}/>
             {renderControlArea()}
           </div>
