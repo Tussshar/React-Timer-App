@@ -34,14 +34,15 @@ var Countdown = React.createClass({
         }
       }
     },
-    /*componentWillUnmount: function () {
+    componentWillUnmount: function () {
       /*
         This method automatically gets fired by react right before your component
         gets removed from the DOM i.e. it gets visually removed from the browser
       */
-/*
-      console.log('Component Did unmount');
-    },*/
+
+      clearInterval(this.timer);
+      this.timer = undefined;
+    },
     /*componentWillUpdate: function (nextProps, nextState) {
       /*
         Gets triggered just before component getting update
@@ -72,7 +73,7 @@ var Countdown = React.createClass({
     },*/
     startTimer: function () {
       /*
-        setInterval gets error function as the first argument which would
+        setInterval gets function to run as the first argument which would
         get called every time the interval happens and
         time in milli seconds as the second argument
         Timer would give us access to the variable when user clicks
