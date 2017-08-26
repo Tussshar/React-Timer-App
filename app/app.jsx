@@ -19,7 +19,7 @@ var Timer = require('Timer');
 var Countdown = require('Countdown');
 
 //Load Foundation
-require('style!css!foundation-sites/dist/foundation.min.css')
+
 
 //App css
 require('style!css!sass!applicationStyles')
