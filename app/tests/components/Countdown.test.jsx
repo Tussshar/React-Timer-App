@@ -50,7 +50,7 @@ describe('Countdown', () => {
       }, 3001);
     });
 
-    it('should pause countdown on paused status', () => {
+    it('should pause countdown on paused status', (done) => {
       var countdown = TestUtils.renderIntoDocument(<Countdown/>);
       countdown.handleSetCountdown(3);
       countdown.handleStatusChange('paused');
@@ -62,13 +62,13 @@ describe('Countdown', () => {
       }, 1001);
     });
 
-    it('should stop countdown on stopped status', () => {
+    it('should stop countdown on stopped status', (done) => {
       var countdown = TestUtils.renderIntoDocument(<Countdown/>);
       countdown.handleSetCountdown(3);
       countdown.handleStatusChange('stopped');
 
       setTimeout(() => {
-        expect(countdown.state.count).toBe(3);
+        expect(countdown.state.count).toBe(0);
         expect(countdown.state.countdownStatus).toBe('stopped');
         done();
       }, 1001);
